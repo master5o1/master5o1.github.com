@@ -21,7 +21,7 @@ body {
 	border: solid 5px #80a9dd;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+	border-radius: 3px;
 	width: 950px;
 	height: 150px;
 	padding: 0;
@@ -40,17 +40,20 @@ body {
 #content {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	padding: 5px 50px 0;
+	border-radius: 3px;
+	padding: 10px 50px 0;
 }
 
 #content .line {
-	margin: 5px 5px;
+	margin: 5px 5px 10px;
 	color: #fff;
 	border-top: solid 5px #384863;
 	border-right: solid 5px #384863;
-	border-left: solid 5px #80a9dd;
-	border-bottom: dashed 5px #80a9dd;
+	border-left: dashed 5px #80a9dd;
+	border-bottom: solid 5px #80a9dd;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 	background: #333;
 	padding: 5px;
 }
