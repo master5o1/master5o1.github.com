@@ -44,14 +44,33 @@ body {
 }
 
 #content {
+	float: left;
+	margin: 30px 20px 0;
+	padding: 10px;
+	color: #fff;
+	border: solid 5px #333;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	padding: 10px 50px 0;
+	-moz-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	background: #333;
+	width: 420px;
+	height: 200px;
 }
 
-#content .line {
-	margin: 20px 5px;
+#links {
+	width: 400px;
+	float: right;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 10px 0 0 20px;
+}
+
+#links .line {
+	margin: 20px -80px 20px 0;
 	color: #fff;
 	border: solid 5px #333;
 	-moz-border-radius: 3px;
@@ -63,15 +82,15 @@ body {
 	background: #333;
 }
 
-#content .line span {
+#links .line span {
 	float: right;
 }
 
-#content .line span a {
+#links .line span a {
 	color: #fff;
 }
 
-#content .line span a:hover {
+#links .line span a:hover {
 	color: #ddd;
 }
 
