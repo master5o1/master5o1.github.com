@@ -1,3 +1,5 @@
+* { border: none; }
+
 body {
 	margin: 0;
 	padding: 0;
@@ -27,7 +29,7 @@ body, #strip {
 	position: relative;
 	top: -75px;
 	left: -50px;
-	background: url(header_plain.png);
+	background: url(images/header_plain.png);
 	border: solid 5px #80a9dd;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -62,18 +64,18 @@ body, #strip {
 	font-size: 15px;
 	float: left;
 	margin: 30px 20px 0;
-	padding: 10px;
+	padding: 15px;
 	color: #fff;
-	border: solid 5px #333;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	-moz-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
-	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
-	box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 	background: #333;
 	width: 440px;
 	height: 200px;
+	text-shadow: 2px 2px 2px #000;
 }
 
 #links {
@@ -83,6 +85,7 @@ body, #strip {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	padding: 10px 0 0 20px;
+	text-shadow: 2px 2px 2px #000;
 }
 
 #links .line {
@@ -110,11 +113,57 @@ body, #strip {
 	color: #ddd;
 }
 
+.boxes {
+	font-size: 15px;
+	float: left;
+	display: inline-block;
+	margin: 10px 19px -30px;
+	padding: 10px;
+	color: #f1f1f1;
+	text-shadow: 2px 2px 3px #000;
+	font-weight: bold;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
+	background: #333;
+	width: 95px;
+	height: 95px;
+	text-decoration: none;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.boxes span {
+	font-size: 12px;
+	line-height: 30px;
+	display: inline-block;
+	width: 115px;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+	background: rgba(0,0,0,0.75);
+	position: relative;
+	top: 75px;
+	left: -10px;
+	-moz-opacity: 0.75;
+	-webkit-opacity: 0.75;
+	opacity: 0.75;
+}
+
+.boxes:hover span {
+	-moz-opacity: 1.0;
+	-webkit-opacity: 1.0;
+	opacity: 1.0;
+}
+
 #rights {
 	font-size: 0.9em;
 	color: #888;
 	text-align: center;
-	margin: 0;
+	margin: 20px;
 	padding: 0;
 	
 }
