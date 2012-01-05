@@ -44,6 +44,7 @@ body {
 }
 
 #content {
+	font-size: 15px;
 	float: left;
 	margin: 30px 20px 0;
 	padding: 10px;
@@ -56,8 +57,12 @@ body {
 	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
 	box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
 	background: #333;
-	width: 420px;
+	width: 440px;
 	height: 200px;
+}
+
+#content p {
+
 }
 
 #links {
@@ -80,6 +85,11 @@ body {
 	-webkit-box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
 	box-shadow: 0px 3px 10px rgba(0,0,0,0.60);
 	background: #333;
+}
+
+#links .line:hover {
+	background: #444;
+	border: solid 5px #444;
 }
 
 #links .line span {
