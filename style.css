@@ -28,7 +28,7 @@ body, #strip {
 #logo {
 	position: relative;
 	top: -75px;
-	left: -50px;
+	left: -60px;
 	background: url(images/header_plain.png);
 	border: solid 5px #80a9dd;
 	-moz-border-radius: 3px;
@@ -60,7 +60,7 @@ body, #strip {
 	display: none;
 }
 
-#content {
+#feature {
 	font-size: 15px;
 	float: left;
 	margin: 30px 20px 0;
@@ -151,12 +151,33 @@ body, #strip {
 	-moz-opacity: 0.75;
 	-webkit-opacity: 0.75;
 	opacity: 0.75;
+	-moz-box-shadow: inset 0px 3px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: inset 0px 3px 10px rgba(0,0,0,0.60);
+	box-shadow: inset 0px 3px 10px rgba(0,0,0,0.60);
 }
 
 .boxes:hover span {
 	-moz-opacity: 1.0;
 	-webkit-opacity: 1.0;
 	opacity: 1.0;
+}
+
+#content {
+	font-size: 15px;
+	margin: 30px 45px 20px;
+	padding: 50px 15px 15px;
+	color: #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	background: #333;
+	width: 800px;
+	min-height: 200px;
+	text-shadow: 2px 2px 2px #000;
+	display: none;
 }
 
 #rights {

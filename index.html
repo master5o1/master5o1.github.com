@@ -6,14 +6,26 @@
 <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
 <script type="text/javascript"><!--
 
+function show(item) {
+	var content = document.getElementById('content');
+	content.style.display = 'block';
+	content.innerHTML = item;
+}
+
+function hide() {
+	var content = document.getElementById('content');
+	content.style.display = 'none';
+	content.innerHTML = '';
+}
 
 //--></script>
 </head>
 <body>
+<a name="top"></a>
 <div id="wrap">
 	<div id="logo"></div>
 	<div id="strip">The Personal Website of Jason Schwarzenberger</div>
-	<div id="content">
+	<div id="feature">
 	Hi, I'm Jason.<br /><br />
 	I was born in Switzerland back in 1989, but I've lived in New Zealand since I was two.<br /><br />
 	I enjoy hacking bits of code around in various languages.  I have experience programming using PHP, JavaScript, Java, C, C++, C# and Bash.<br /><br />
@@ -26,14 +38,16 @@
 		<div class="line"><strong>Google+</strong> <span><a href="https://profiles.google.com/iam5o1/about">https://profiles.google.com/iam5o1/about</a></div>
 		<div class="line"><strong>Last.fm</strong> <span><a href="http://www.last.fm/user/Master5o1">http://www.last.fm/user/Master5o1</a></div>
 	</div>
-	<div style="clear: both;"></div>
-	<div>
-		<a class="boxes" style="background: url(images/Toolbar.png);" href="https://github.com/master5o1/bbPress-Post-Toolbar"><span>Toolbar</span></a>
-		<a class="boxes" style="background: url(images/Ignore.png);" href="https://github.com/master5o1/bbPress-Ignore-User"><span>Ignore User</span></a>
-		<a class="boxes" style="background: url(images/Forum-colours.png);" href="https://github.com/master5o1/bbPress-Forum-Colours"><span>Forum Colours</span></a>
-		<a class="boxes" style="background: url(images/bbPress-Mobile.png);" href="https://launchpad.net/bbpress-mobile"><span>bbPress Mobile</span></a>
-		<a class="boxes" style="background: url(images/Tartarus.png);" href="http://tartarus.co.nz/"><span>Tartarus</span></a>
-		<a class="boxes" style="background: url(images/Schwarzenberger.png);" href="http://master5o1.github.com/"><span>About</span></a>
+	<div style="clear: both;">
+		<a class="boxes" style="background: url(images/Toolbar.png);" onclick="show('bbPress-Post-Toolbar');" href="#content"><span>Toolbar</span></a>
+		<a class="boxes" style="background: url(images/Ignore.png);" onclick="show('bbPress-Ignore-User');" href="#content"><span>Ignore User</span></a>
+		<a class="boxes" style="background: url(images/Forum-colours.png);" onclick="show('bbPress-Forum-Colours');" href="#content"><span>Forum Colours</span></a>
+		<a class="boxes" style="background: url(images/bbPress-Mobile.png);" onclick="show('bbPress-Mobile');" href="#content"><span>bbPress Mobile</span></a>
+		<a class="boxes" style="background: url(images/Tartarus.png);" onclick="show('Tartarus');" href="#content"><span>Tartarus</span></a>
+		<a class="boxes" style="background: url(images/Schwarzenberger.png);" onclick="hide();" href="#top"><span>About</span></a>
+	</div>
+	<div id="content" style="clear: both;">
+	Hai.
 	</div>
 	<div style="clear: both;"></div>
 </div>
