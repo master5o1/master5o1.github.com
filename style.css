@@ -44,6 +44,7 @@ body, #strip {
 }
 
 #strip {
+	background: #80a9dd;
 	color: #444;
 	font-weight: bold;
 	margin: 0 -10px -10px 5px;
@@ -57,7 +58,6 @@ body, #strip {
 	font-size: 16px;
 	width: 400px;
 	text-align: center;
-	display: none;
 }
 
 #feature {
