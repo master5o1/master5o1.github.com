@@ -119,7 +119,7 @@ body, #strip {
 	float: left;
 	display: inline-block;
 	/*margin: 10px 19px -30px;*/
-	margin: 10px 35px -30px 34px;
+	margin: 10px 35px -30px;
 	padding: 10px;
 	color: #f1f1f1;
 	text-shadow: 2px 2px 3px #000;
@@ -166,7 +166,7 @@ body, #strip {
 
 #content {
 	font-size: 15px;
-	margin: 30px 45px 20px;
+	margin: 30px 45px 20px 47px;
 	padding: 50px 15px 15px;
 	color: #fff;
 	-moz-border-radius: 3px;
