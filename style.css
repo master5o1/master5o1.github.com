@@ -142,6 +142,7 @@ body,
 	text-decoration: none;
 	vertical-align: middle;
 	text-align: center;
+	cursor: pointer;
 }
 
 .boxes span {
