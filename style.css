@@ -201,12 +201,12 @@ body,
 }
 
 #content pre {
-	line-height: 2.0em 0 1.0em;
+	line-height: 1.4em;
 	
 }
 
-#content h4 {
-	margin: 1.5em;
+#content h3 {
+	margin: 2.0em 0 1.4em;
 }
 
 #content img {
