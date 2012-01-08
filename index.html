@@ -28,7 +28,9 @@ function show(item) {
 			content.innerHTML=xmlhttp.responseText;
 		}
 	}
-	xmlhttp.open("GET","pages/"+item+".txt",true);
+	var d = new Date();
+	var t = d.getTime();
+	xmlhttp.open("GET","pages/"+item+".html"+"?"+t,true);
 	xmlhttp.send();
 	window.current = item;
 }
