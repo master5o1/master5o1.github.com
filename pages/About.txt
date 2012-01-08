@@ -1,5 +1,5 @@
 <div>
-<h3>About</h3>
+<strong>About</strong>
 Hi, I'm Jason.<br /><br />
 I was born in Switzerland back in 1989, but I've lived in New Zealand since I was two.<br /><br />
 I enjoy hacking bits of code around in various languages.  I have experience programming using PHP, JavaScript, Java, C, C++, C# and Bash.<br /><br />
