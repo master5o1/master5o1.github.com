@@ -85,8 +85,9 @@ body, #strip {
 	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
-	width: 440px;
-	height: 200px;
+	opacity: 0.5;
+	width: 470px;
+	height: 230px;
 	overflow: hidden;
 }
 
