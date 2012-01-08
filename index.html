@@ -55,7 +55,7 @@ function blog() {
 	xmlhttp.onreadystatechange=function() {
 		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
 			content.innerHTML=xmlhttp.responseText;
-		} else if (xmlhttp.readyState==4 && xmlhttp.status==404) {
+		} else if (xmlhttp.status==404) {
 			content.innerHTML='no posts this month.';
 		}
 	}
