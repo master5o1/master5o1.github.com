@@ -114,6 +114,10 @@ body, #strip {
 	color: #ddd;
 }
 
+#boxescontainer {
+	padding: 0 60px 0 55px;
+}
+
 .boxes {
 	font-size: 15px;
 	float: left;
