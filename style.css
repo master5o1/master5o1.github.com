@@ -84,9 +84,9 @@ body, #strip {
 	border-radius: 3px;
 	width: 470px;
 	height: 230px;
-	-moz-opacity: 0.2;
-	-webkit-opacity: 0.2;
-	opacity: 0.2;
+	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 }
 
 #links {
