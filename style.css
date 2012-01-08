@@ -177,7 +177,7 @@ body, #strip {
 	width: 800px;
 	min-height: 200px;
 	text-shadow: 2px 2px 2px #000;
-	display: none;
+	/*display: none;*/
 }
 
 #rights {
