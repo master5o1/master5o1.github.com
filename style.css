@@ -175,9 +175,13 @@ body, #strip {
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 	background: #333;
 	width: 800px;
-	min-height: 200px;
+	min-height: 100px;
 	text-shadow: 2px 2px 2px #000;
-	/*display: none;*/
+	display: none;
+}
+
+#content .loading {
+	margin: 50px 0 0 390px;
 }
 
 #rights {

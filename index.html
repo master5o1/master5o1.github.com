@@ -16,7 +16,7 @@ function show(item) {
 	}
 	var content = document.getElementById('content');
 	content.style.display = 'block';
-	content.innerHTML = item;
+	content.innerHTML = '<img src="images/ajax-loader.gif" class="loading" />';
 	var xmlhttp;
 	if (window.XMLHttpRequest) {
 		xmlhttp=new XMLHttpRequest();
