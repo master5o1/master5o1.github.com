@@ -72,7 +72,7 @@ body, #strip {
 	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
 	background: #333;
-	/*background-image: url(feature/1.jpg);*/
+	background-image: url(feature/1.jpg);
 	width: 470px;
 	height: 230px;
 	text-shadow: 2px 2px 2px #000;
