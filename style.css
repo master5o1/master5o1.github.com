@@ -114,15 +114,12 @@ body, #strip {
 	color: #ddd;
 }
 
-#boxescontainer {
-	margin: 0 0 0 60px;
-}
-
 .boxes {
 	font-size: 15px;
 	float: left;
 	display: inline-block;
-	margin: 10px 19px -30px;
+	/*margin: 10px 19px -30px;*/
+	margin: 10px 31px -30px;
 	padding: 10px;
 	color: #f1f1f1;
 	text-shadow: 2px 2px 3px #000;
