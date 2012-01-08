@@ -62,7 +62,7 @@ function blog() {
 	var d = new Date();
 	var t = d.getTime();
 	months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-	alert("blog/"+d.getYear()+"/"+months[d.getMonth()]+".html");
+	alert("blog/"+d.getFullYear()+"/"+months[d.getMonth()]+".html");
 	xmlhttp.open("GET","blog/"+d.getFullYear()+"/"+months[d.getMonth()]+".html"+"?"+t,true);
 	xmlhttp.send();
 }
