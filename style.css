@@ -64,7 +64,6 @@ body, #strip {
 	font-size: 15px;
 	float: left;
 	margin: 30px 20px 0;
-	padding: 15px;
 	color: #fff;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -79,7 +78,17 @@ body, #strip {
 	text-shadow: 2px 2px 2px #000;
 }
 
-#feautre img { padding: 0; border: 0; }
+#feautre img {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	-webkit-box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	box-shadow: inset 0px 0px 10px rgba(0,0,0,0.60);
+	width: 440px;
+	height: 200px;
+	overflow: hidden;
+}
 
 #links {
 	width: 400px;
