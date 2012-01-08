@@ -17,10 +17,6 @@ function show(item) {
 	content.style.display = 'block';
 	content.innerHTML = '<img src="images/ajax-loader.gif" class="loading" />';
 	window.current = item;
-	if (item = 'Blog') {
-		blog();
-		return;
-	}
 	var xmlhttp;
 	if (window.XMLHttpRequest) {
 		xmlhttp=new XMLHttpRequest();
@@ -43,28 +39,6 @@ function hide() {
 	content.style.display = 'none';
 	content.innerHTML = '';
 	window.current = -1;
-}
-
-function blog() {
-	var xmlhttp;
-	if (window.XMLHttpRequest) {
-		xmlhttp=new XMLHttpRequest();
-	} else {
-		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-	}
-	xmlhttp.onreadystatechange=function() {
-		if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-			content.innerHTML=xmlhttp.responseText;
-		} else if (xmlhttp.status==404) {
-			content.innerHTML='no posts this month.';
-		}
-	}
-	var d = new Date();
-	var t = d.getTime();
-	months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-	alert("blog/"+d.getFullYear()+"/"+months[d.getMonth()]+".html");
-	xmlhttp.open("GET","blog/"+d.getFullYear()+"/"+months[d.getMonth()]+".html"+"?"+t,true);
-	xmlhttp.send();
 }
 
 //--></script>
