@@ -184,6 +184,10 @@ body, #strip {
 	margin: 50px 0 0 390px;
 }
 
+#content a {
+	color: #fff;
+}
+
 #rights {
 	font-size: 0.9em;
 	color: #888;
