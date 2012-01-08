@@ -192,6 +192,11 @@ body, #strip {
 	color: #ddd;
 }
 
+#content pre {
+	line-height: 1.4em;
+	
+}
+
 #rights {
 	font-size: 0.9em;
 	color: #888;
