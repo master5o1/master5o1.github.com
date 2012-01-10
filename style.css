@@ -239,7 +239,7 @@ body,
 #rights a:hover { color: #aaa; }
 
 #ads {
-	/*display: none;*/
+	display: none;
 	width: 800px;
 	margin: 30px auto;
 	text-align: center;
