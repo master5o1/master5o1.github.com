@@ -237,15 +237,3 @@ body,
 
 #rights a { color: #888; }
 #rights a:hover { color: #aaa; }
-
-#ads {
-	display: none;
-	width: 800px;
-	margin: 30px auto;
-	text-align: center;
-	opacity: 0.1;
-}
-
-#ads:hover {
-	opacity: 0.5;
-}
