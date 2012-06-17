@@ -96,10 +96,10 @@ $(function(){
 });
 
 $.startScrolling = function() {
-	var current_hash = false;
+	$.current_hash = false;
 	var timer = window.setInterval(function() {
-		if(window.location.hash != current_hash) {
-			current_hash = window.location.hash;
+		if(window.location.hash != $.current_hash) {
+			$.current_hash = window.location.hash;
 			$.scrolling();
 		}
 	}, 100);
