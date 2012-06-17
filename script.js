@@ -24,7 +24,7 @@ $(document).ready(function() {
 	
 	if (!$.browser['msie']) {
 		$.getJSON('https://www.googleapis.com/plus/v1/people/107744372254752109523/activities/public?key=AIzaSyBH2lAVF5Tak_-QZIgq8GK1vhfMGDb4TKQ', function(data) {
-			var front_post = data.items[0].object.content;
+			var front_post = data.items[0].title;
 			if (front_post.split(' ').length > 30) front_post = front_post.split(' ').splice(0,30).join(' ') + '...';
 			$('#google-plus-post').append("&#8220;" + front_post + "&#8221;");
 			$('#google-plus-nav a').css('visibility', 'hidden');
