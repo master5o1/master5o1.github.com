@@ -30,7 +30,6 @@ $(document).ready(function() {
 			$('#google-plus-nav a').css('visibility', 'hidden');
 			$.each(data.items, function(key, value) {
 				var slide = '<li>';
-				var title = value.title;
 				if (typeof value.object.attachments != 'undefined') {
 					if (value.object.attachments[0].objectType == 'photo') {
 						var attachment = "background: url('" + value.object.attachments[0].image.url.replace('resize_h=100', 'resize_w=464') + "') no-repeat; background-size: 464px auto;"
@@ -48,7 +47,6 @@ $(document).ready(function() {
 				var replies = (value.object.replies.totalItems == 1) ? '1 reply' : value.object.replies.totalItems + ' replies';
 				var plusones = (value.object.plusoners.totalItems == 0) ? "+0" : '<span style="color: #DD4B39;">+' + value.object.plusoners.totalItems + '</span>';
 				slide += '<div style="font-size: 0.70em; padding: 0 1.0em; line-height: 40px;"><a href="' + value.object.url + '">Permalink</a> | Updated <time class="timeago" datetime="' + value.updated + '">' + (new Date(value.updated)).toDateString() + '</time> &middot; ' + replies + ' &middot; ' + plusones + '</div>';
-				// ' + $.timeago(new Date(value.updated)) + '
 				slide += '</li>';
 				$('#google-plus-slides').append(slide);
 				if (key > 0) {
@@ -91,15 +89,9 @@ $.getQueryFromURL = function(url) {
 	return urlParams;
 };
 
-/*
-$(function(){
-    $('a[href^="#/"]').click($.scrolling);
-});
-*/
-
 $.startScrolling = function() {
 	$.current_hash = false;
-	var timer = window.setInterval(function() {
+	window.setInterval(function() {
 		if(window.location.hash != $.current_hash) {
 			$.current_hash = window.location.hash;
 			$.scrolling();
@@ -110,8 +102,6 @@ $.startScrolling = function() {
 $.scrolling = function(){
 	var yx, y, x, count, hash;
 	hash = window.location.hash;
-//	if (this === $ || this == window) { hash = window.location.hash; }
-//	else { hash = $(this).attr('href'); }
 	yx = hash.replace('#/','').split('/');
 	y = $.horizontal_slides[yx[0]];
 	count = $('#slide li[data-nav="' + yx[0] + '"] ol li').length;
