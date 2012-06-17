@@ -91,9 +91,11 @@ $.getQueryFromURL = function(url) {
 	return urlParams;
 };
 
+/*
 $(function(){
-    //$('a[href^="#/"]').click($.scrolling);
+    $('a[href^="#/"]').click($.scrolling);
 });
+*/
 
 $.startScrolling = function() {
 	$.current_hash = false;
@@ -102,13 +104,14 @@ $.startScrolling = function() {
 			$.current_hash = window.location.hash;
 			$.scrolling();
 		}
-	}, 100);
+	}, 200);
 }
 
 $.scrolling = function(){
 	var yx, y, x, count, hash;
-	if (this === $ || this == window) { hash = window.location.hash; }
-	else { hash = $(this).attr('href'); }
+	hash = window.location.hash;
+//	if (this === $ || this == window) { hash = window.location.hash; }
+//	else { hash = $(this).attr('href'); }
 	yx = hash.replace('#/','').split('/');
 	y = $.horizontal_slides[yx[0]];
 	count = $('#slide li[data-nav="' + yx[0] + '"] ol li').length;
