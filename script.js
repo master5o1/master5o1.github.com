@@ -96,7 +96,7 @@ $.startScrolling = function() {
 			$.current_hash = window.location.hash;
 			$.scrolling();
 		}
-	}, 200);
+	}, 100);
 }
 
 $.scrolling = function(){
