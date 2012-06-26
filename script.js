@@ -51,7 +51,6 @@ $(document).ready(function() {
 		});
 	} else {
 		$('#slide').remove('li[data-nav="Posts]"');
-		$('#left h1').css('font-size', '1.8em');
 		$('#menu [href="#/Posts"]').hide();
 		$.startScrolling();
 	}
