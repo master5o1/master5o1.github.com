@@ -118,8 +118,6 @@ $.scrolling = function(){
 	} else if (x == 0) {
 		$('a.creation-scroll[href^="#/' + yx[0] + '/"]').show().animate({opacity: 1.0}, 500);
 	}
-	console.log($('body').data('current'));
-	console.log(yx[0]);
 	$('#slide [data-nav="' + $('body').data('current') + '"] ol').stop().animate({
 		marginLeft: 0
 	}, 400);
