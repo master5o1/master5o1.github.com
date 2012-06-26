@@ -67,6 +67,7 @@ $(document).ready(function() {
 			);
 		}
 	});
+	$('li[data-nav="Welcome"] .slide .creation-nav').html('<span style="display: inline-block; line-height: 40px; margin-right: 1.0em; float: right;">Marvel at my wondrous <a href="#/Creations" style="font-weight: bold;">creations</a>.</span>');
 	$('#menu').show().animate({opacity: 1.0}, 1100);
 });
 
