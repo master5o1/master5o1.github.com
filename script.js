@@ -24,10 +24,6 @@ $(document).ready(function() {
 	
 	if (!$.browser['msie']) {
 		$.getJSON('https://www.googleapis.com/plus/v1/people/107744372254752109523/activities/public?key=AIzaSyBH2lAVF5Tak_-QZIgq8GK1vhfMGDb4TKQ', function(data) {
-			var front_post = data.items[0].title;
-			if (front_post.split(' ').length > 30) front_post = front_post.split(' ').splice(0,30).join(' ') + '...';
-			$('#google-plus-post').append("&#8220;" + front_post + "&#8221;");
-			$('#google-plus-nav a').css('visibility', 'hidden');
 			$.each(data.items, function(key, value) {
 				var slide = '<li>';
 				if (typeof value.object.attachments != 'undefined') {
@@ -49,16 +45,13 @@ $(document).ready(function() {
 				slide += '<div style="font-size: 0.70em; padding: 0 1.0em; line-height: 40px;"><a href="' + value.object.url + '">Permalink</a> | Updated <time class="timeago" datetime="' + value.updated + '">' + (new Date(value.updated)).toDateString() + '</time> &middot; ' + replies + ' &middot; ' + plusones + '</div>';
 				slide += '</li>';
 				$('#google-plus-slides').append(slide);
-				if (key > 0) {
-					$('#google-plus-nav a').css('visibility', 'visible');
-				}
 			});
 			$('.timeago').timeago();
 			$.startScrolling();
 		});
 	} else {
 		$('#slide').remove('li[data-nav="Posts]"');
-		$('#google-plus-front-post p').hide();
+		$('#left h1').css('font-size', '1.8em');
 		$('#menu [href="#/Posts"]').hide();
 		$.startScrolling();
 	}
