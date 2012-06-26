@@ -101,6 +101,7 @@ $.scrolling = function(){
 	if (yx.length == 1) yx[1] = 0;
 	x = yx[1] * 1 || yx[1];
 	console.log('x = ' + x);
+	console.log(typeof x);
 	if (typeof x == 'string') {
 		$('#slide li[data-nav="' + yx[0] + '"] .slide ol li').each(function(index) {
 			if ($('#slide li[data-nav="' + yx[0] + '"] .slide ol li').eq(index).data('nav') == yx[1]) {
