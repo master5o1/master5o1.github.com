@@ -40,7 +40,7 @@ $(document).ready(function() {
 					}
 				} else {
 					//slide += '<div style="height: 364px; padding: 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
-					slide += '<div style="height: 384px;"><p>' + value.object.content + '</p></div>';
+					slide += '<div style="height: 364px;"><p>' + value.object.content + '</p></div>';
 				}
 				var replies = (value.object.replies.totalItems == 1) ? '1 reply' : value.object.replies.totalItems + ' replies';
 				var plusones = (value.object.plusoners.totalItems == 0) ? "+0" : '<span style="color: #DD4B39;">+' + value.object.plusoners.totalItems + '</span>';
