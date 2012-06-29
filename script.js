@@ -44,7 +44,7 @@ $(document).ready(function() {
 				}
 				var replies = (value.object.replies.totalItems == 1) ? '1 reply' : value.object.replies.totalItems + ' replies';
 				var plusones = (value.object.plusoners.totalItems == 0) ? "+0" : '<span style="color: #DD4B39;">+' + value.object.plusoners.totalItems + '</span>';
-				slide += '<div style="background: #f0f; font-size: 0.70em; padding: 0 1.0em; line-height: 40px;"><a href="' + value.object.url + '">Permalink</a> | Updated <time class="timeago" datetime="' + value.updated + '">' + (new Date(value.updated)).toDateString() + '</time> &middot; ' + replies + ' &middot; ' + plusones + '</div>';
+				slide += '<div style="font-size: 0.70em; padding: 0 1.0em; line-height: 40px;"><a href="' + value.object.url + '">Permalink</a> | Updated <time class="timeago" datetime="' + value.updated + '">' + (new Date(value.updated)).toDateString() + '</time> &middot; ' + replies + ' &middot; ' + plusones + '</div>';
 				slide += '</li>';
 				$('#google-plus-slides').append(slide);
 			});
