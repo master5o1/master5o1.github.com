@@ -30,7 +30,7 @@ $(document).ready(function() {
 					if (value.object.attachments[0].objectType == 'photo') {
 						var attachment = "background: url('" + value.object.attachments[0].image.url.replace('resize_h=100', 'resize_w=464') + "') no-repeat; background-size: 464px auto;"
 						//slide += '<div style="height: 364px;' + attachment + ' padding: 10px;"><span style="display: inline-block; border-radius: 0.25em; margin: 1.55em 1.55em; padding: 0.2em; background-color: rgba(0,0,0,0.30);">' + value.object.content + '</span></div>';
-						slide += '<div style="height: 261px;' + attachment + ' padding: 10px;"></div><div style="height: 113px; padding: 5px 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
+						slide += '<div style="height: 261px;' + attachment + ' padding: 10px;"></div><div style="height: 100px; width: 444px; padding: 5px 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
 					} else if (value.object.attachments[0].objectType == 'video' && value.object.attachments[0].url.match(/http:\/\/www\.youtube\.com.*/)) {
 						var attachment = '<iframe width="464" height="261" src="https://www.youtube-nocookie.com/embed/' + $.getQueryFromURL(value.object.attachments[0].url).v + '" frameborder="0" allowfullscreen></iframe>';
 						slide += attachment + '<div style="height: 113px; padding: 5px 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
