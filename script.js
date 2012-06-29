@@ -36,7 +36,7 @@ $(document).ready(function() {
 					} else {
 						var attachment = '<h2><a href="' + value.object.attachments[0].url + '">' + value.object.attachments[0].displayName + '</a></h2>';
 						//slide += '<div style="height: 364px; padding: 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em 0.5em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p><p style="display: inline-block; border-radius: 0.25em; margin: 0.5em 1.0em 1.0em; padding: 0.25em 0.75em; background-color: rgba(255,255,255,0.05);">' + attachment + '</p></div>';
-						slide += attachment + '<div style="height: 364px; padding: 10px;"><p>' + value.object.content + '</p></div>';
+						slide += attachment + '<div style="height: 364px;"><p>' + value.object.content + '</p></div>';
 					}
 				} else {
 					slide += '<div style="height: 364px; padding: 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
