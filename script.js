@@ -32,11 +32,11 @@ $(document).ready(function() {
 						slide += '<div style="height: 261px;' + attachment + '"></div><div style="height: 113px; overflow: hidden; padding: 5px;"><p>' + value.object.content + '</p></div>';
 					} else if (value.object.attachments[0].objectType == 'video' && value.object.attachments[0].url.match(/http:\/\/www\.youtube\.com.*/)) {
 						var attachment = '<iframe width="464" height="261" src="https://www.youtube-nocookie.com/embed/' + $.getQueryFromURL(value.object.attachments[0].url).v + '" frameborder="0" allowfullscreen></iframe>';
-						//slide += attachment + '<div style="height: 113px; padding: 5px 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
 						slide += attachment + '<div style="height: 110px; overflow: hidden; padding: 5px;"><p>' + value.object.content + '</p></div>';
 					} else {
-						var attachment = '<a href="' + value.object.attachments[0].url + '">' + value.object.attachments[0].displayName + '</a>';
-						slide += '<div style="height: 364px; padding: 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em 0.5em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p><p style="display: inline-block; border-radius: 0.25em; margin: 0.5em 1.0em 1.0em; padding: 0.25em 0.75em; background-color: rgba(255,255,255,0.05);">' + attachment + '</p></div>';
+						var attachment = '<h2><a href="' + value.object.attachments[0].url + '">' + value.object.attachments[0].displayName + '</a></h2>';
+						//slide += '<div style="height: 364px; padding: 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em 0.5em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p><p style="display: inline-block; border-radius: 0.25em; margin: 0.5em 1.0em 1.0em; padding: 0.25em 0.75em; background-color: rgba(255,255,255,0.05);">' + attachment + '</p></div>';
+						slide += attachment + '<div style="height: 364px; padding: 10px;"><p>' + value.object.content + '</p></div>';
 					}
 				} else {
 					slide += '<div style="height: 364px; padding: 10px;"><p style="display: inline-block; border-radius: 0.25em; margin: 1.0em 1.0em; padding: 0.75em; background-color: rgba(255,255,255,0.05);">' + value.object.content + '</p></div>';
