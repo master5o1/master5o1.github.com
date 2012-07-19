@@ -332,6 +332,7 @@ body {
 #google-plus-slides div.photo-content:hover {
 	height: 213px;
 	margin: -100px 0 0;
+	background: rgba(255,0,0,0.50);
 }
 
 #google-plus-slides div.video-content {
