@@ -29,16 +29,16 @@ $(document).ready(function() {
 				if (typeof value.object.attachments != 'undefined') {
 					if (value.object.attachments[0].objectType == 'photo') {
 						var attachment = "background: url('" + value.object.attachments[0].image.url.replace('resize_h=100', 'resize_w=464') + "') no-repeat; background-size: 464px auto;"
-						slide += '<div style="height: 261px;' + attachment + '"></div><div style="height: 113px; overflow-x: hidden; overflow-y: auto; padding: 5px;"><p>' + value.object.content + '</p></div>';
+						slide += '<div style="height: 261px;' + attachment + '"></div><div class="googleplus-content" style="height: 113px; overflow-x: hidden; overflow-y: auto; padding: 5px;"><p>' + value.object.content + '</p></div>';
 					} else if (value.object.attachments[0].objectType == 'video' && value.object.attachments[0].url.match(/http:\/\/www\.youtube\.com.*/)) {
 						var attachment = '<iframe width="464" height="261" src="https://www.youtube-nocookie.com/embed/' + $.getQueryFromURL(value.object.attachments[0].url).v + '" frameborder="0" allowfullscreen></iframe>';
-						slide += attachment + '<div style="height: 110px; overflow-x: hidden; overflow-y: auto; padding: 5px;"><p>' + value.object.content + '</p></div>';
+						slide += attachment + '<div class="googleplus-content" style="height: 110px; overflow-x: hidden; overflow-y: auto; padding: 5px;"><p>' + value.object.content + '</p></div>';
 					} else {
 						var attachment = '<h2><a href="' + value.object.attachments[0].url + '">' + value.object.attachments[0].displayName + '</a></h2>';
-						slide += attachment + '<div style="height: 335px; overflow-x: hidden; overflow-y: auto;"><p>' + value.object.content + '</p></div>';
+						slide += attachment + '<div class="googleplus-content" style="height: 335px; overflow-x: hidden; overflow-y: auto;"><p>' + value.object.content + '</p></div>';
 					}
 				} else {
-					slide += '<div style="height: 367px;"><p>' + value.object.content + '</p></div>';
+					slide += '<div class="googleplus-content" style="height: 367px;"><p>' + value.object.content + '</p></div>';
 				}
 				var replies = (value.object.replies.totalItems == 1) ? '1 reply' : value.object.replies.totalItems + ' replies';
 				var plusones = (value.object.plusoners.totalItems == 0) ? "+0" : '<span style="color: #DD4B39;">+' + value.object.plusoners.totalItems + '</span>';
@@ -46,6 +46,7 @@ $(document).ready(function() {
 				slide += '</li>';
 				$('#google-plus-slides').append(slide);
 			});
+			$('.googleplus-content').tinyscrollbar();
 			$('.timeago').timeago();
 			$.startScrolling();
 		});
