@@ -330,18 +330,15 @@ body {
 	padding: 5px;
 }
 #google-plus-slides div.photo-content:hover {
-	height: 213px;
-	margin: -100px 0 0;
-	-webkit-transition-property: margin, height;
-	-webkit-transition-duration: 1s, 1s;
-	-webkit-transition-timing-function: linear, ease-in;
+	overflow-y: auto;
 }
 
 #google-plus-slides div.photo-content:hover p{
 	background: rgba(255,0,0,0.5);
 	padding: 0 0.5em;
 	margin: 0 1.0em;
-	-webkit-transition-property: padding, margin, background;
+	margin-top: -100px;
+	-webkit-transition-property: margin-top, background;
 	-webkit-transition-duration: 1s, 1s;
 	-webkit-transition-timing-function: linear, ease-in;
 }
