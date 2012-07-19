@@ -329,10 +329,6 @@ body {
 	overflow: hidden;
 	padding: 5px;
 }
-#google-plus-slides div.photo-content:hover {
-	overflow-y: auto;
-}
-
 #google-plus-slides div.video-content {
 	height: 110px;
 	overflow: hidden;
@@ -350,4 +346,10 @@ body {
 	font-size: 0.70em;
 	padding: 0 1.0em;
 	line-height: 40px;
+}
+#google-plus-slides div.photo-content:hover,
+#google-plus-slides div.video-content:hover,
+#google-plus-slides div.url-content:hover,
+#google-plus-slides div.text-content:hover {
+	overflow-y: scroll;
 }
