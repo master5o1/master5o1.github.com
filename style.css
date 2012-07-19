@@ -329,10 +329,9 @@ body {
 	overflow: hidden;
 	padding: 5px;
 }
-#google-plus-slides div.photo-content:hover {
-	height: 213px;
+#google-plus-slides div.photo-content:hover p {
 	margin: -100px 0 0;
-	background: rgba(255,0,0,0.50);
+	background: rgba(0,0,0,0.1);
 }
 
 #google-plus-slides div.video-content {
