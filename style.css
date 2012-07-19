@@ -1,7 +1,4 @@
 ::-webkit-scrollbar {
-	position: relative;
-	right: -16px;
-	top: 0;
 	height: 16px;
 	overflow: visible;
 	width: 16px;
@@ -25,7 +22,7 @@
 	border-width: 0 0 0 4px;
 }
 ::-webkit-scrollbar-corner {
-background: transparent;
+	background: transparent;
 }
 
 body {
@@ -257,9 +254,6 @@ body {
 	overflow: hidden;
 }
 
-#google-plus-slides {
-}
-
 .hoz-slider li {
 	list-style-type: none;
 	display: inline-block;
@@ -318,4 +312,38 @@ body {
 	font-size: 0.85em;
 	display: inline-block;
 	opacity: 0.5;
+}
+
+
+#google-plus-slides {
+
+}
+
+#google-plus-slides div.photo {
+	height: 261px;
+	background-repeat: no-repeat;
+	background-size: 464px auto;
+}
+#google-plus-slides div.photo-content {
+	height: 113px;
+	overflow: hidden;
+	padding: 5px;
+}
+#google-plus-slides div.video-content {
+	height: 110px;
+	overflow: hidden;
+	padding: 5px;
+}
+#google-plus-slides div.url-content {
+	height: 335px;
+	overflow: hidden;
+}
+#google-plus-slides div.text-content {
+	height: 367px;
+	overflow: hidden;
+}
+#google-plus-slides div.permalink-bar {
+	font-size: 0.70em;
+	padding: 0 1.0em;
+	line-height: 40px;
 }
