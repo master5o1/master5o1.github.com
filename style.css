@@ -1,9 +1,10 @@
-#google-plus-slides::-webkit-scrollbar {
+::-webkit-scrollbar {
 	height: 16px;
 	overflow: visible;
 	width: 16px;
+	background: transparent;
 }
-#google-plus-slides::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
 	background-color: rgba(0, 0, 0, 0.75);
 	background-clip: padding-box;
 	border: solid transparent;
@@ -12,21 +13,20 @@
 	padding: 100px 0 0;
 	box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1),inset 0 -1px 0 rgba(0, 0, 0, .07);
 }
-#google-plus-slides::-webkit-scrollbar-button {
+::-webkit-scrollbar-button {
 	height: 0;
 	width: 0;
 }
-#google-plus-slides::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
 	background-clip: padding-box;
 	border: solid transparent;
 	border-width: 0 0 0 4px;
 }
-#google-plus-slides::-webkit-scrollbar-corner {
+::-webkit-scrollbar-corner {
 	background: transparent;
 }
 
 body {
-	overflow: scroll;
 	margin: 0;
 	padding: 0;
 	font-size: 15px;
