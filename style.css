@@ -324,5 +324,5 @@ body {
 #google-plus-slides div.video-content:hover,
 #google-plus-slides div.url-content:hover,
 #google-plus-slides div.text-content:hover {
-	overflow-y: scroll;
+	/*overflow-y: auto;*/
 }
