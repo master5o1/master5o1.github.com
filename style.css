@@ -324,13 +324,5 @@ body {
 #google-plus-slides div.video-content:hover,
 #google-plus-slides div.url-content:hover,
 #google-plus-slides div.text-content:hover {
-	position: relative;
-	top: 0;
-	left: 0;
-	background: #f0f;
-	width: 500px;
-	height: 500px;
-	z-index: 200;
-	-webkit-transition-property: width, height, top, left;
-	-webkit-transition-duration: 200ms;
+	overflow-y: scroll;
 }
