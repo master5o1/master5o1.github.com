@@ -329,6 +329,11 @@ body {
 	overflow: hidden;
 	padding: 5px;
 }
+#google-plus-slides div.photo-content:hover {
+	height: 213px;
+	margin: -100px 0 0;
+}
+
 #google-plus-slides div.video-content {
 	height: 110px;
 	overflow: hidden;
