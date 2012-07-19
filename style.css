@@ -329,19 +329,8 @@ body {
 	overflow: hidden;
 	padding: 5px;
 }
-#google-plus-slides div.photo-content p {
-	background: rgba(255,255,255,0.1);
-	border-radius: 3px 3px 0 0;
-	border: solid 1px #666;
-	padding: 0.5em !important;
-	margin: 0 1.0em;
-}
 #google-plus-slides div.photo-content:hover {
-	height: 213px;
-	margin: -100px 0 0;
-	-webkit-transition-property: margin, height;
-	-webkit-transition-duration: 500ms, 500ms;
-	-webkit-transition-timing-function: linear, ease-in;
+	overflow-y: auto;
 }
 
 #google-plus-slides div.video-content {
