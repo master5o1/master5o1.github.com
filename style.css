@@ -7,6 +7,7 @@
 	background-color: rgba(0, 0, 0, 0.75);
 	background-clip: padding-box;
 	border: solid transparent;
+	margin-right: -16px;
 	border-width: 1px 1px 1px 1px;
 	min-height: 28px;
 	padding: 100px 0 0;
