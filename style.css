@@ -1,5 +1,7 @@
 ::-webkit-scrollbar {
-	margin-right: -16px;
+	position: relative;
+	right: -16px;
+	top: 0;
 	height: 16px;
 	overflow: visible;
 	width: 16px;
