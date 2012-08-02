@@ -300,12 +300,12 @@ body {
 #google-plus-slides div.photo-content {
 	height: 113px;
 	overflow: hidden;
-	padding: 3px 5px;
+	padding: 2px 5px;
 }
 #google-plus-slides div.video-content {
 	height: 110px;
 	overflow: hidden;
-	padding: 3px 5px;
+	padding: 2px 5px;
 }
 #google-plus-slides div.url-content {
 	height: 335px;
