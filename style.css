@@ -298,14 +298,14 @@ body {
 	background-size: 464px auto;
 }
 #google-plus-slides div.photo-content {
-	height: 113px;
+	height: 123px;
 	overflow: hidden;
-	padding: 2px 5px;
+	padding: 0 5px;
 }
 #google-plus-slides div.video-content {
-	height: 110px;
+	height: 120px;
 	overflow: hidden;
-	padding: 2px 5px;
+	padding: 0 5px;
 }
 #google-plus-slides div.url-content {
 	height: 335px;
@@ -319,6 +319,12 @@ body {
 	font-size: 0.70em;
 	padding: 0 1.0em;
 	line-height: 40px;
+}
+#google-plus-slides div.photo-content p,
+#google-plus-slides div.video-content p,
+#google-plus-slides div.url-content p,
+#google-plus-slides div.text-content p {
+	
 }
 #google-plus-slides div.photo-content:hover,
 #google-plus-slides div.video-content:hover,
