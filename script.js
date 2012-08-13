@@ -1,3 +1,36 @@
+$.gplus = function(data) {
+	$(document).ready(function() {
+		$.each(data.items, function(key, value) {
+			var slide = '<li>';
+			if (typeof value.object.attachments != 'undefined') {
+				if (value.object.attachments[0].objectType == 'video' && value.object.attachments[0].url.match(/http:\/\/www\.youtube\.com.*/)) {
+					var attachment = '<iframe width="464" height="261" src="https://www.youtube-nocookie.com/embed/' + $.getQueryFromURL(value.object.attachments[0].url).v + '" frameborder="0" allowfullscreen></iframe>';
+					slide += attachment + '<div class="video-content"><p>' + value.object.content + '</p></div>';
+				} else if (value.object.attachments[0].objectType == 'photo' || value.object.attachments[0].objectType == 'video') {
+					var image = value.object.attachments[0].image.url.replace('resize_h=100', 'resize_w=464');
+					var attachment = "background-image: url('" + image + "');"
+					var video = '';
+					if (value.object.attachments[0].objectType == 'video') {
+						video = '<span style="display: inline-block; font-size: 0.75em; margin: 0.5em 0.75em; font-style: oblique;">This is a video, to view it check the <a href="' + value.object.url + '">permalink</a>.</span>';
+					}
+					slide += '<div class="photo" style="' + attachment + '">' + video + '</div><div class="photo-content"><p>' + value.object.content + '</p></div>';
+				} else {
+					var attachment = '<h2><a href="' + value.object.attachments[0].url + '">' + value.object.attachments[0].displayName + '</a></h2>';
+					slide += attachment + '<div class="url-content"><p>' + value.object.content + '</p></div>';
+				}
+			} else {
+				slide += '<div class="text-content"><p>' + value.object.content + '</p></div>';
+			}
+			var replies = (value.object.replies.totalItems == 1) ? '1 reply' : value.object.replies.totalItems + ' replies';
+			var plusones = (value.object.plusoners.totalItems == 0) ? "+0" : '<span style="color: #DD4B39;">+' + value.object.plusoners.totalItems + '</span>';
+			slide += '<div class="permalink-bar"><a href="' + value.object.url + '">Permalink</a> | Updated <time class="timeago" datetime="' + value.updated + '">' + (new Date(value.updated)).toDateString() + '</time> &middot; ' + replies + ' &middot; ' + plusones + '</div>';
+			slide += '</li>';
+			$('#google-plus-slides').append(slide);
+		});
+		$('.timeago').timeago();
+		$.startScrolling();
+	});
+}
 $(document).ready(function() {
 	var outside = $('#outside');	
 	var width = $(document).width();
@@ -21,39 +54,6 @@ $(document).ready(function() {
 		$('#menu').append('<li><a href="#/' + $('#slide > li').eq(index).data('nav') + '" class="scroller"' + style + '>' + $('#slide > li').eq(index).data('nav') + '</a></li>');
 		$.horizontal_slides[$('#slide > li').eq(index).data('nav')] = index;
 	});
-	
-	if (!$.browser['msie']) {
-		$.getJSON('https://www.googleapis.com/plus/v1/people/107744372254752109523/activities/public?key=AIzaSyBH2lAVF5Tak_-QZIgq8GK1vhfMGDb4TKQ', function(data) {
-			$.each(data.items, function(key, value) {
-				var slide = '<li>';
-				if (typeof value.object.attachments != 'undefined') {
-					if (value.object.attachments[0].objectType == 'photo') {
-						var attachment = "background-image: url('" + value.object.attachments[0].image.url.replace('resize_h=100', 'resize_w=464') + "');"
-						slide += '<div class="photo" style="' + attachment + '"></div><div class="photo-content"><p>' + value.object.content + '</p></div>';
-					} else if (value.object.attachments[0].objectType == 'video' && value.object.attachments[0].url.match(/http:\/\/www\.youtube\.com.*/)) {
-						var attachment = '<iframe width="464" height="261" src="https://www.youtube-nocookie.com/embed/' + $.getQueryFromURL(value.object.attachments[0].url).v + '" frameborder="0" allowfullscreen></iframe>';
-						slide += attachment + '<div class="video-content"><p>' + value.object.content + '</p></div>';
-					} else {
-						var attachment = '<h2><a href="' + value.object.attachments[0].url + '">' + value.object.attachments[0].displayName + '</a></h2>';
-						slide += attachment + '<div class="url-content"><p>' + value.object.content + '</p></div>';
-					}
-				} else {
-					slide += '<div class="text-content"><p>' + value.object.content + '</p></div>';
-				}
-				var replies = (value.object.replies.totalItems == 1) ? '1 reply' : value.object.replies.totalItems + ' replies';
-				var plusones = (value.object.plusoners.totalItems == 0) ? "+0" : '<span style="color: #DD4B39;">+' + value.object.plusoners.totalItems + '</span>';
-				slide += '<div class="permalink-bar"><a href="' + value.object.url + '">Permalink</a> | Updated <time class="timeago" datetime="' + value.updated + '">' + (new Date(value.updated)).toDateString() + '</time> &middot; ' + replies + ' &middot; ' + plusones + '</div>';
-				slide += '</li>';
-				$('#google-plus-slides').append(slide);
-			});
-			$('.timeago').timeago();
-			$.startScrolling();
-		});
-	} else {
-		$('#slide').remove('li[data-nav="Posts]"');
-		$('#menu [href="#/Posts"]').hide();
-		$.startScrolling();
-	}
 	
 	$('#slide > li').each(function(index){
 		if ($('#slide li[data-nav="' + $('#slide > li').eq(index).data('nav') + '"] .slide ol').length > 0) {
