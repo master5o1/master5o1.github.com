@@ -27,10 +27,9 @@ $.gplus = function(data) {
 			slide += '</li>';
 			$('#google-plus-slides').append(slide);
 		});
-		$('.timeago').timeago();
-		$.startScrolling();
 	});
 }
+
 $(document).ready(function() {
 	var outside = $('#outside');	
 	var width = $(document).width();
@@ -72,7 +71,9 @@ $(document).ready(function() {
 	$('#feature').cycle({
 		fx: 'scrollLeft',
 		timeout: 5000
-	});	
+	});
+	$('.timeago').timeago();
+	$.startScrolling();
 });
 
 $.getQueryFromURL = function(url) {
