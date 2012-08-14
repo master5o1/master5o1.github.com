@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Sociceon";
+  font-style: normal;
+  font-weight: normal;
+  src:  url("./sociceon/sociceon.eot");
+  src:  url("./sociceon/sociceon.eot?#iefix") format("embedded-opentype"),
+        url("./sociceon/sociceon.woff") format("woff"),
+        url("./sociceon/sociceon.ttf") format("truetype"),
+        url("./sociceon/sociceon.svg#socicon") format("svg");
+}
+
 body {
 	margin: 0;
 	padding: 0;
