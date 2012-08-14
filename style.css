@@ -175,6 +175,7 @@ body {
 }
 
 #right .inside ul#slide li div.slide h3 {
+	clear: both;
 	color: #ddd;
 	font-size: 1.0em;
 	margin: 0 1.0em;
