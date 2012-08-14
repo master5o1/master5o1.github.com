@@ -105,6 +105,7 @@ $.scrolling = function(event){
 			}
 		});
 	}
+	x = x * 1;
 	if (typeof x != 'number') { x = y = 0; }
 	if ((-1 * x * $('#right').width()) == 0) {
 		$('a.creation-scroll[href="#/' + yx[0] + '"]').animate({opacity: 0.0}, 500).hide(500);
