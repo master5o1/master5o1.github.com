@@ -11,7 +11,7 @@ $.gplus = function(data) {
 					var attachment = "background-image: url('" + image + "');"
 					var video = '';
 					if (value.object.attachments[0].objectType == 'video') {
-						video = '<span style="display: inline-block; font-size: 0.75em; margin: 0.5em 0.75em; font-style: oblique;">This is a video, to view it check the <a href="' + value.object.url + '">permalink</a>.</span>';
+						video = '<span style="display: inline-block; font-size: 0.75em; margin: 0.5em 0.75em; font-style: oblique;">This is a video, view it <a href="' + value.object.attachments[0].url + '">here</a>.</span>';
 					}
 					slide += '<div class="photo" style="' + attachment + '">' + video + '</div><div class="photo-content"><p>' + value.object.content + '</p></div>';
 				} else {
