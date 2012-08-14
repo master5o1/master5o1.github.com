@@ -75,7 +75,6 @@ $(document).ready(function() {
 
 	$(window).bind('hashchange', function(event) { if (window.location.hash.substring(0,2) == '#/') $.scrolling(event); });
 	$(window).load($.scrolling);
-	
 	$('.timeago').timeago();
 });
 
