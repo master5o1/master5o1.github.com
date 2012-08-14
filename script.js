@@ -72,8 +72,11 @@ $(document).ready(function() {
 		fx: 'scrollLeft',
 		timeout: 5000
 	});
+
+	$(window).bind('hashchange', function(event) { if (window.location.hash.substring(0,2) == '#/') $.scrolling(event); });
+	$(window).load($.scrolling);
+	
 	$('.timeago').timeago();
-	$.startScrolling();
 });
 
 $.getQueryFromURL = function(url) {
@@ -88,17 +91,7 @@ $.getQueryFromURL = function(url) {
 	return urlParams;
 };
 
-$.startScrolling = function() {
-	$.current_hash = false;
-	window.setInterval(function() {
-		if(window.location.hash != $.current_hash) {
-			$.current_hash = window.location.hash;
-			$.scrolling();
-		}
-	}, 100);
-}
-
-$.scrolling = function(){
+$.scrolling = function(event){
 	var yx, y, x, count, hash;
 	hash = window.location.hash;
 	yx = hash.replace('#/','').split('/');
@@ -136,7 +129,6 @@ $.scrolling = function(){
 	if (this != $ && this != window) {
 		event.preventDefault();
 	}
-	//window.location.hash = hash;
 	$('a.creation-scroll[href^="#/' + yx[0] + '/"]').attr('href', '#/' + yx[0] + '/' + ((x + 1) % count));
 	$('#menu [href="#/' + $('body').data('current') + '"]').css('background', 'rgba(0,0,0,0.75)');
 	$('#menu [href="#/' + yx[0] + '"]').css('background', 'rgba(0,0,0,0.95)');
