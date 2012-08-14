@@ -2,9 +2,9 @@
   font-family: "Sociceon";
   font-style: normal;
   font-weight: normal;
-  src:  url("sociceon.eot");
-  src:  url("sociceon.eot?#iefix") format("embedded-opentype"),
-        url("sociceon.woff") format("woff"),
-        url("sociceon.ttf") format("truetype"),
-        url("sociceon.svg#socicon") format("svg");
+  src:  url("./sociceon.eot");
+  src:  url("./sociceon.eot?#iefix") format("embedded-opentype"),
+        url("./sociceon.woff") format("woff"),
+        url("./sociceon.ttf") format("truetype"),
+        url("./sociceon.svg#socicon") format("svg");
 }
