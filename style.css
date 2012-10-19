@@ -232,8 +232,39 @@ body {
 	padding: 0.25em 0.75em;
 }
 
+#menu li a:hover,
+#menu li a.current { background: rgba(0,0,0,0.95); }
+
+#sub-menu {
+	clear: both;
+	font-size: 0.75em;
+	float: right;
+	margin: 1.0em 1.0em 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#sub-menu li {
+	margin: 0 0.25em 0 0;
+	padding: 0;
+	display: inline-block;
+}
+
+#sub-menu li a {
+	color: white;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-decoration: none;
+	background: rgba(0,0,0,0.75);
+	margin: 0;
+	padding: 0.25em 0.75em;
+}
+
+#sub-menu li a:hover,
+#sub-menu li a.current { background: rgba(0,0,0,0.95); }
+
 .hoz-slider {
-	height: 424px;
+	height: 464px;
 	width: 5000%;
 	margin: 0;
 	padding: 0;
@@ -268,17 +299,18 @@ body {
 	text-decoration: underline !important;
 }
 
-.creation-nav, .welcome-nav {
-	height: 40px;
+.welcome-nav,
+.creation-nav {
+	line-height: 35px;
 	background: rgba(50,50,50,0.25);
 }
+.welcome-nav {
+	padding-right: 1.0em;
+	text-align: right;
+}
 
-.creation-scroll {
-	color: white !important;
-	line-height: 40px;
-	margin: 0 1.0em;
-	padding: 0;
-	display: inline-block;
+.creation-nav {
+	padding-left: 1.0em;
 }
 
 .hoz-slider h4 {
@@ -302,7 +334,6 @@ body {
 
 
 #google-plus-slides {
-
 }
 
 #google-plus-slides div.photo {
@@ -311,28 +342,33 @@ body {
 	background-size: 464px auto;
 }
 #google-plus-slides div.photo-content {
-	height: 123px;
+	height: 168px;
 	overflow: hidden;
 	padding: 0 5px;
 }
 #google-plus-slides div.video-content {
-	height: 120px;
+	height: 165px;
 	overflow: hidden;
 	padding: 0 5px;
 }
 #google-plus-slides div.url-content {
-	height: 345px;
+	height: 390px;
 	overflow: hidden;
 }
+
 #google-plus-slides div.text-content {
-	height: 367px;
+	height: 429px;
 	overflow: hidden;
 }
+
 #google-plus-slides div.permalink-bar {
 	font-size: 0.70em;
 	padding: 0 1.0em;
-	line-height: 40px;
+	line-height: 35px;
+	background: rgba(50,50,50,0.25);
 }
+
+
 #google-plus-slides div.photo-content p,
 #google-plus-slides div.video-content p,
 #google-plus-slides div.url-content p,
@@ -345,4 +381,23 @@ body {
 #google-plus-slides div.url-content:hover,
 #google-plus-slides div.text-content:hover {
 	/*overflow-y: auto;*/
+}
+
+#twitter-slides li {
+	padding: 1.0em 0 0;
+}
+
+#twitter-slides div.text-content {
+	padding: 0;
+	height: 116px;
+	overflow: hidden;
+}
+#twitter-slides div.text-content p {
+	padding: 0 1.0em !important;
+	margin: 0;
+}
+#twitter-slides div.permalink-bar {
+	font-size: 0.70em;
+	padding: 0 1.0em 0 2.0em;
+	line-height: 1.5em;
 }

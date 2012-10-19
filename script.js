@@ -1,7 +1,7 @@
 $.gplus = function(data) {
 	$(document).ready(function() {
 		$.each(data.items, function(key, value) {
-			var slide = '<li>';
+			var slide = '<li data-nav="' + key + '">';
 			if (typeof value.object.attachments != 'undefined') {
 				if (value.object.attachments[0].objectType == 'video' && value.object.attachments[0].url.match(/http:\/\/www\.youtube\.com.*/)) {
 					var attachment = '<iframe width="464" height="261" src="https://www.youtube-nocookie.com/embed/' + $.getQueryFromURL(value.object.attachments[0].url).v + '" frameborder="0" allowfullscreen></iframe>';
@@ -30,6 +30,34 @@ $.gplus = function(data) {
 	});
 }
 
+var Twitter = function(data) {
+	$(document).ready(function() {
+		for (var i = 0; i < data.length; i+=4) {
+			var slide = '<li data-nav="' + (i/4) +'">';
+			for (var j = 0; j < 4; j++) {
+				if (i+j >= data.length) { break; }
+				var value = data[i+j];
+				var tweet = '<div class="text-content">';
+				var text = value.text;
+				var linkUrls = function (text) {
+					var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+					return text.replace(exp,"<a href='$1'>$1</a>"); 
+				};
+				text = linkUrls(text);
+				text = text.replace(/@([a-zA-Z0-9_]+)/g, '@<a href="https://twitter.com/$1">$1</a>');
+				text = text.replace(/#([a-zA-Z0-9_]+)/g,'#<a href="https://twitter.com/search?q=%23$1">$1</a>');
+				tweet += '<p>' + text + '</p>';
+				var retweet_count = (value.retweet_count == 0? "" : " &middot; " + value.retweet_count + " retweet" + (value.retweet_count == 1? "" : "s"));
+				tweet += '<div class="permalink-bar"><a href="https://twitter.com/master5o1/status/' + value.id_str + '">Permalink</a> | Posted <time class="timeago" datetime="' + value.created_at + '">' + (new Date(value.created_at)).toDateString() + '</time> via ' + value.source + retweet_count + '</div>';
+				tweet += '</div>';
+				slide += tweet;
+			}
+			slide += '</li>';
+			$('#twitter-slides').append(slide);
+		}
+	});
+}
+
 $(document).ready(function() {
 	var outside = $('#outside');	
 	var width = $(document).width();
@@ -48,25 +76,14 @@ $(document).ready(function() {
 		var style = '';
 		if (index == 0) {
 			$('body').data('current', $('#slide > li').eq(index).data('nav'));
-			style = ' style="background: rgba(0,0,0,0.95);"';
+			style = ' current';
 		}
-		$('#menu').append('<li><a href="#/' + $('#slide > li').eq(index).data('nav') + '" class="scroller"' + style + '>' + $('#slide > li').eq(index).data('nav') + '</a></li>');
+		if ($('#slide > li').eq(index).data('menu') != false)
+			$('#menu').append('<li><a href="#/' + $('#slide > li').eq(index).data('nav') + '" class="scroller' + style + '">' + $('#slide > li').eq(index).data('nav') + '</a></li>');
 		$.horizontal_slides[$('#slide > li').eq(index).data('nav')] = index;
 	});
-	
-	$('#slide > li').each(function(index){
-		if ($('#slide li[data-nav="' + $('#slide > li').eq(index).data('nav') + '"] .slide ol').length > 0) {
-			$('#slide li[data-nav="' + $('#slide > li').eq(index).data('nav') + '"] .slide').append(
-				'<div class="creation-nav">'
-				+ '<a href="#/' + $('#slide > li').eq(index).data('nav') + '" style="float: left;" class="scroller creation-scroll">&larr; Beginning</a>'
-				+ '<a href="#/' + $('#slide > li').eq(index).data('nav') + '/1" style="float: right;" class="scroller creation-scroll">Next &rarr;</a>'
-				+ '<div style="clear: both;"></div>'
-				+ '</div>'
-			);
-		}
-	});
-	$('li[data-nav="Welcome"] .slide .creation-nav').html('<span style="display: inline-block; line-height: 40px; margin-right: 1.0em; float: right;">Marvel at my wondrous <a href="#/Creations" style="font-weight: bold;">creations</a>.</span>');
-	$('#menu').show().animate({opacity: 1.0}, 1100);
+
+	$('#menu').show().animate({opacity: 1.0}, 750);
 
 	$('#feature').cycle({
 		fx: 'scrollLeft',
@@ -89,6 +106,40 @@ $.getQueryFromURL = function(url) {
 		urlParams[decode(match[1])] = decode(match[2]);
 	return urlParams;
 };
+
+$.submenu = function(page, slide, count) {
+	$.vertical_slides = {};
+	$('#sub-menu').css('opacity', 0).hide();
+	$('#sub-menu').html('');
+	$('li[data-nav="' + page + '"] div.slide ol > li').each(function(index){
+		if ($('li[data-nav="' + page + '"] div.slide ol > li').eq(index).data('nav') == undefined) { return; }
+		var nav = $('li[data-nav="' + page + '"] div.slide ol > li').eq(index).data('nav');
+		var label = nav*1 || nav;
+		if (typeof label != 'string') label = (label + 1);
+		var style = '';
+		if (index == slide) {
+			$('body').data('sub-current', nav);
+			style = ' current';
+		}
+		$('#sub-menu').append('<li><a href="#/' + page + '/' + nav + '" class="scroller' + style + '">' + label + '</a></li>');
+		$.vertical_slides[nav] = index;
+	});
+	if (count > 1) {
+		if (slide > 0) {
+			var prev = $('li[data-nav="' + page + '"] div.slide ol > li').eq(slide - 1).data('nav');
+			$('#sub-menu').prepend('<li><a href="#/' + page + '/' + prev + '" class="scroller">&larr;</a></li>');
+		} else {
+			$('#sub-menu').prepend('<li><a class="scroller" style="background: rgba(0,0,0,0.50);">&larr;</a></li>');
+		}
+		if ((slide + 1) < count) {
+			var next = $('li[data-nav="' + page + '"] div.slide ol > li').eq(slide + 1).data('nav');
+			$('#sub-menu').append('<li><a href="#/' + page + '/' + next + '" class="scroller">&rarr;</a></li>');
+		} else {
+			$('#sub-menu').append('<li><a class="scroller" style="background: rgba(0,0,0,0.50);">&rarr;</a></li>');
+		}
+	}
+	$('#sub-menu').show().animate({opacity: 1.0}, 0);
+}
 
 $.scrolling = function(event){
 	var yx, y, x, count, hash;
@@ -129,8 +180,8 @@ $.scrolling = function(event){
 	if (this != $ && this != window) {
 		event.preventDefault();
 	}
-	$('a.creation-scroll[href^="#/' + yx[0] + '/"]').attr('href', '#/' + yx[0] + '/' + ((x + 1) % count));
 	$('#menu [href="#/' + $('body').data('current') + '"]').css('background', 'rgba(0,0,0,0.75)');
 	$('#menu [href="#/' + yx[0] + '"]').css('background', 'rgba(0,0,0,0.95)');
+	$.submenu(yx[0], x, count);
 	$('body').data('current', yx[0]);
 }

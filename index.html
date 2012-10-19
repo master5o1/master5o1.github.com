@@ -17,6 +17,9 @@
 	<script type="text/javascript" src="jquery.timeago.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 	<script type="text/javascript" src="https://www.googleapis.com/plus/v1/people/107744372254752109523/activities/public?callback=$.gplus&amp;key=AIzaSyBH2lAVF5Tak_-QZIgq8GK1vhfMGDb4TKQ&amp;fields=items(title,published,updated,url,actor,verb,object)"></script>
+	<!--
+	<script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=master5o1&callback=Twitter"></script>
+	-->
 	<!-- AIzaSyBH2lAVF5Tak_-QZIgq8GK1vhfMGDb4TKQ -->
 </head>
 <body data-current="0">
@@ -44,7 +47,7 @@
 		<div id="right"><div class="inside">
 			<ul id="slide">
 				<li data-nav="Welcome"><div class="slide">
-					<ol class="hoz-slider">
+					<ol class="hoz-slider" style="height: 429px;">
 						<li>
 							<div id="feature">
 								<img src="feature/self.jpg" alt="" />
@@ -55,25 +58,45 @@
 							<p style="margin: 2.0em auto 2.01em; font-family: 'Ubuntu', sans-serif; font-size: 1.5em; text-align: center;">I'm a <strong>web developer</strong> and <strong>creator</strong> of <em>many things</em>.<!--  I enjoy the playful hacking of code. --></p>
 						</li>
 					</ol>
+					<div class="welcome-nav">
+						<span>Marvel at my wondrous <a href="#/Creations" style="font-weight: bold;">creations</a>.</span>
+						<div style="clear: both;"></div>
+					</div>
 				</div></li>
 				<li data-nav="Creations"><div class="slide">
 					<ol class="hoz-slider">
 						<li data-nav="Chris">
-							<div class="img" style="background-image: url(creation/Chris-website.png);"></div>
-							<h2>Chris Corson-Scott Website</h2>
-							<p>I was tasked with building a website to showcase Chris' artwork as a slideshow with image zooming.</p>
-							<p>View: <a href="http://chriscorsonscott.com/">chriscorsonscott.com</a></p>
+							<div style="height: 429px;">
+								<div class="img" style="background-image: url(creation/Chris-website.png);"></div>
+								<h2>Chris Corson-Scott Website</h2>
+								<p>I was tasked with building a website to showcase Chris' artwork as a slideshow with image zooming.</p>
+							</div>
+							<div class="creation-nav">
+								<span>View: <a href="http://chriscorsonscott.com/">chriscorsonscott.com</a></span>
+								<div style="clear: both;"></div>
+							</div>
 						</li>
 						<li data-nav="Dumploader">
-							<div class="img" style="background-image: url(creation/dumploader.png);"></div>
-							<h2>Dumploader</h2>
-							<p>A file hosting website written in JavaScript and utilising the Node.JS web application framework.</p>
-							<p>Source: <a href="https://github.com/master5o1/Dumploader" title="master5o1/Dumploader on GitHub">master5o1/Dumploader</a></p>
+							<div style="height: 429px;">
+								<div class="img" style="background-image: url(creation/dumploader.png);"></div>
+								<h2>Dumploader</h2>
+								<p>A file hosting website written in JavaScript and utilising the Node.JS web application framework.</p>
+							</div>
+							<div class="creation-nav">
+								<span>Source: <a href="https://github.com/master5o1/Dumploader" title="master5o1/Dumploader on GitHub">master5o1/Dumploader</a></span>
+								<div style="clear: both;"></div>
+							</div>
 						</li>
 						<li data-nav="WordPress">
-							<div class="img" style="background-image: url(creation/bbp-toolbar.png);"></div>
-							<h2>WordPress & bbPress</h2>
-							<p>I've made a few of plugins to bbPress 2.0.  There's the <a href="https://github.com/master5o1/bbPress-Post-Toolbar">post toolbar</a> (image), an <a href="https://github.com/master5o1/bbPress-Ignore-User">ignore post filter</a>, and one that allows assigning of <a href="https://github.com/master5o1/bbPress-Forum-Colours">colours to a forum</a>.</p>
+							<div style="height: 429px;">
+								<div class="img" style="background-image: url(creation/bbp-toolbar.png);"></div>
+								<h2>WordPress & bbPress</h2>
+								<p>I've made a few of plugins to bbPress 2.0.  There's the <a href="https://github.com/master5o1/bbPress-Post-Toolbar">post toolbar</a> (image), an <a href="https://github.com/master5o1/bbPress-Ignore-User">ignore post filter</a>, and one that allows assigning of <a href="https://github.com/master5o1/bbPress-Forum-Colours">colours to a forum</a>.</p>
+							</div>
+							<div class="creation-nav">
+								<span>Plugin page: <a href="https://wordpress.org/extend/plugins/bbpress-post-toolbar/">bbPress Post Toolbar</a></span>
+								<div style="clear: both;"></div>
+							</div>
 						</li>
 						<li data-nav="Website">
 							<div class="img" style="background-image: url(creation/website.png);"></div>
@@ -85,6 +108,11 @@
 				<li data-nav="Posts"><div class="slide">
 					<ol class="hoz-slider" id="google-plus-slides"></ol>
 				</div></li>
+				<!--
+				<li data-nav="Twitter" data-menu="true"><div class="slide">
+					<ol class="hoz-slider" id="twitter-slides"></ol>
+				</div></li>
+				-->
 				<li data-nav="About"><div class="slide">
 					<ol class="hoz-slider">
 						<li data-nav="Me">
@@ -144,6 +172,7 @@
 		&copy; 2012 Jason Schwarzenberger
 	--></span>
 	<ul id="menu"></ul>
+	<ul id="sub-menu"></ul>
 </div>
 </body>
 </html>
