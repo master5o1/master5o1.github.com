@@ -115,7 +115,8 @@ $.submenu = function(page, slide, count) {
 		if ($('li[data-nav="' + page + '"] div.slide ol > li').eq(index).data('nav') == undefined) { return; }
 		var nav = $('li[data-nav="' + page + '"] div.slide ol > li').eq(index).data('nav');
 		var label = nav*1 || nav;
-		if (typeof label != 'string') label = (label + 1);
+		if (typeof label == 'string') { label = label.replace(/-/g,' '); }
+		else { label = (label + 1); }
 		var style = '';
 		if (index == slide) {
 			$('body').data('sub-current', nav);
