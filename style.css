@@ -251,6 +251,7 @@ body {
 }
 
 #sub-menu li a {
+	display: inline-block; 
 	color: white;
 	font-weight: bold;
 	text-decoration: none;

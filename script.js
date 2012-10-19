@@ -115,22 +115,21 @@ $.submenu = function(page, slide, count) {
 		if ($('li[data-nav="' + page + '"] div.slide ol > li').eq(index).data('nav') == undefined) { return; }
 		var nav = $('li[data-nav="' + page + '"] div.slide ol > li').eq(index).data('nav');
 		var label = nav*1 || nav;
-		if (typeof label == 'string') { label = label.replace(/-/g,' '); }
-		else { label = (label + 1); }
-		var style = '';
+		var className = '';
 		if (index == slide) {
-			$('body').data('sub-current', nav);
-			style = ' current';
+			className += ' current';
 		}
-		$('#sub-menu').append('<li><a href="#/' + page + '/' + nav + '" class="scroller' + style + '">' + label + '</a></li>');
+		if (typeof label == 'string') { label = label.replace(/-/g,' '); }
+		else { return; label = (label + 1); }
+		$('#sub-menu').append('<li><a href="#/' + page + '/' + nav + '" class="scroller' + className + '"><span>' + label + '</span></a></li>');
 		$.vertical_slides[nav] = index;
 	});
 	if (count > 1) {
 		if (slide > 0) {
 			var prev = $('li[data-nav="' + page + '"] div.slide ol > li').eq(slide - 1).data('nav');
-			$('#sub-menu').prepend('<li><a href="#/' + page + '/' + prev + '" class="scroller">&larr;</a></li>');
+			$('#sub-menu').append('<li><a href="#/' + page + '/' + prev + '" class="scroller">&larr;</a></li>');
 		} else {
-			$('#sub-menu').prepend('<li><a class="scroller" style="background: rgba(0,0,0,0.50);">&larr;</a></li>');
+			$('#sub-menu').append('<li><a class="scroller" style="background: rgba(0,0,0,0.50);">&larr;</a></li>');
 		}
 		if ((slide + 1) < count) {
 			var next = $('li[data-nav="' + page + '"] div.slide ol > li').eq(slide + 1).data('nav');
