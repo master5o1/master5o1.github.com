@@ -2,11 +2,24 @@
   font-family: "Sociceon";
   font-style: normal;
   font-weight: normal;
-  src:  url("./sociceon/sociceon.eot");
-  src:  url("./sociceon/sociceon.eot?#iefix") format("embedded-opentype"),
-        url("./sociceon/sociceon.woff") format("woff"),
-        url("./sociceon/sociceon.ttf") format("truetype"),
-        url("./sociceon/sociceon.svg#socicon") format("svg");
+  src:  url("./fonts/sociceon/sociceon.eot");
+  src:  url("./fonts/sociceon/sociceon.eot?#iefix") format("embedded-opentype"),
+        url("./fonts/sociceon/sociceon.woff") format("woff"),
+        url("./fonts/sociceon/sociceon.ttf") format("truetype"),
+        url("./fonts/sociceon/sociceon.svg#socicon") format("svg");
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(./fonts/Ubuntu.woff) format('woff');
+}
+@font-face {
+  font-family: 'Rochester';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Rochester'), local('Rochester-Regular'), url(./fonts/Rochester.woff) format('woff');
 }
 
 body {
