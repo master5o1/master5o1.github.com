@@ -354,7 +354,19 @@ body {
 	background-repeat: no-repeat;
 	background-size: 464px auto;
 }
+#google-plus-slides div.album {
+	background: #000;
+	text-align: center;
+	height: 261px;
+	width: 464px;
+	overflow: hidden;
+}
 #google-plus-slides div.photo-content {
+	height: 168px;
+	overflow: hidden;
+	padding: 0 5px;
+}
+#google-plus-slides div.album-content {
 	height: 168px;
 	overflow: hidden;
 	padding: 0 5px;
@@ -381,7 +393,14 @@ body {
 	background: rgba(50,50,50,0.25);
 }
 
+#google-plus-slides div.album img {
+	height: 261px;
+	border: none;
+	vertical-align: middle;
+	margin: auto;
+}
 
+#google-plus-slides div.album-content p,
 #google-plus-slides div.photo-content p,
 #google-plus-slides div.video-content p,
 #google-plus-slides div.url-content p,
@@ -389,6 +408,7 @@ body {
 	margin: 0.75em 0;
 	padding: 0 1.0em !important;
 }
+#google-plus-slides div.album-content:hover,
 #google-plus-slides div.photo-content:hover,
 #google-plus-slides div.video-content:hover,
 #google-plus-slides div.url-content:hover,
