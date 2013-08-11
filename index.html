@@ -8,186 +8,77 @@
 	<meta property="og:url" content="http://master5o1.com/" />
 	<meta property="og:image" content="http://master5o1.com/Schwarzenberger.png" />
 	<link rel="shortcut icon" href="favicon.png" type="image/png" />
-	<link href="style.css" type="text/css" rel="stylesheet" />
-	
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
-	<script type="text/javascript" src="jquery.slider.js"></script>
-	<script type="text/javascript" src="jquery.timeago.js"></script>
-	<script type="text/javascript" src="script.js"></script>
-	<script type="text/javascript" src="https://www.googleapis.com/plus/v1/people/107744372254752109523/activities/public?callback=GooglePlus&amp;key=AIzaSyAabUtHNCMaFz1W02faOu7gH5owgZoHmMo&amp;fields=items(title,published,updated,url,actor,verb,object)"></script>
-	<!-- 
-	<script type="text/javascript" src="http://api.twitter.com/1/statuses/user_timeline.json?screen_name=master5o1&callback=Twitter"></script>
+
+	<link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+	<link href="/css/style.css" type="text/css" rel="stylesheet" />
 	<!-- -->
 	<!-- AIzaSyAabUtHNCMaFz1W02faOu7gH5owgZoHmMo -->
 </head>
 <body>
-<div id="outside">
-	<div id="centrebox">
-		<div id="left"><div class="inside">
-			<a href="#/Welcome"><img src="Schwarzenberger.png" height="150" alt="Image" /></a>
-			<h1>Jason Schwarzenberger</h1>
-			<hr style="width: 65%; margin: -0.1em auto; border: none; border-bottom: solid 1px #666;" />
-			<ul>
-				<li>
-					<span>Email</span>
-					<a href="mailto:jason@master5o1.com">@</a>
-				</li>
-				<li>
-					<span>Google+</span>
-					<a href="https://profiles.google.com/iam5o1/about">g</a>
-				</li>
-				<li>
-					<span>GitHub</span>
-					<a href="https://github.com/master5o1">h</a>
-				</li>
-			</ul>
-		</div></div>
-		<div id="right"><div class="inside">
-			<ul id="slide">
-				<li data-nav="Welcome"><div class="slide">
-					<ol class="hoz-slider" style="height: 429px;">
-						<li>
-							<div id="feature">
-								<img src="feature/self.jpg" alt="" />
-								<img src="feature/pig.jpg" alt="" />
-								<img src="feature/relax.jpg" alt="" />
-								<img src="feature/snowboarding.jpg" alt="" />
-							</div>
-							<p style="margin: 2.0em auto 2.01em; font-family: 'Ubuntu', sans-serif; font-size: 1.5em; text-align: center;">I'm a <strong>software developer</strong> and <strong>creator</strong> of <em>many things</em>.<!--  I enjoy the playful hacking of code. --></p>
-						</li>
-					</ol>
-					<div class="welcome-nav">
-						<span>Marvel at my wondrous <a href="#/Creations" style="font-weight: bold;">creations</a></span>
-						<div style="clear: both;"></div>
-					</div>
-				</div></li>
-				<li data-nav="Creations"><div class="slide">
-					<ol class="hoz-slider">
-						<li data-nav="Chris">
-							<div style="height: 429px;">
-								<div class="img" style="background-image: url(creation/Chris-website.png);"></div>
-								<h2>Chris Corson-Scott Website</h2>
-								<p>I was tasked with building a website to showcase Chris' artwork as a slideshow with image zooming.</p>
-							</div>
-							<div class="creation-nav">
-								<span>View: <a href="http://chriscorsonscott.com/">chriscorsonscott.com</a></span>
-								<div style="clear: both;"></div>
-							</div>
-						</li>
-						<li data-nav="Dumploader">
-							<div style="height: 429px;">
-								<div class="img" style="background-image: url(creation/dumploader.png);"></div>
-								<h2>Dumploader</h2>
-								<p>A file hosting website written in JavaScript and utilising the Node.JS web application framework.</p>
-							</div>
-							<div class="creation-nav">
-								<span>Source: <a href="https://github.com/master5o1/Dumploader" title="master5o1/Dumploader on GitHub">master5o1/Dumploader</a></span>
-								<div style="clear: both;"></div>
-							</div>
-						</li>
-						<li data-nav="WordPress">
-							<div style="height: 429px;">
-								<div class="img" style="background-image: url(creation/bbp-toolbar.png);"></div>
-								<h2>WordPress & bbPress</h2>
-								<p>I've made a few of plugins to bbPress 2.0.  There's the <a href="https://github.com/master5o1/bbPress-Post-Toolbar">post toolbar</a> (image), an <a href="https://github.com/master5o1/bbPress-Ignore-User">ignore post filter</a>, and one that allows assigning of <a href="https://github.com/master5o1/bbPress-Forum-Colours">colours to a forum</a>.</p>
-							</div>
-							<div class="creation-nav">
-								<span>Plugin page: <a href="https://wordpress.org/extend/plugins/bbpress-post-toolbar/">bbPress Post Toolbar</a></span>
-								<div style="clear: both;"></div>
-							</div>
-						</li>
-						<li data-nav="My-Website">
-							<div class="img" style="background-image: url(creation/website.png);"></div>
-							<h2>My Website</h2>
-							<p>My website is my HTML sketchpad.  I redesign it to learn more about web development and related technologies.</p>
-							<p>I first built my website in 2006, heavily relying on <a href="http://www.w3schools.com/">W3Schools</a> for help with HTML.  Now I rarely need to look at documentation.</p>
-						</li>
-					</ol>
-				</div></li>
-				<li data-nav="Posts"><div class="slide">
-					<ol class="hoz-slider" id="google-plus-slides"></ol>
-				</div></li>
-				<!-- 
-				<li data-nav="Twitter" data-menu="true"><div class="slide">
-					<ol class="hoz-slider" id="twitter-slides"></ol>
-				</div></li>
-				<!-- -->
-				<li data-nav="About"><div class="slide">
-					<ol class="hoz-slider">
-						<li data-nav="Me">
-							<div class="img" style="background-image: url(feature/self.jpg);"></div>
-							<h2>About</h2>
-							<p>I'm a <abbr title="April 20, 1989">24 year old</abbr> geek from New Zealand.</p>
-							<p>I was born in Switzerland but I speak more C# and Java than I do German, French or Italian.</p>
-						</li>
-						<li data-nav="Hobbies">
-							<div class="img" style="background-image: url(feature/snowboarding.jpg);"></div>
-							<h2>Hobbies</h2>
-							<p style="margin: 0.5em 0;">I enjoy cycling, having done two &#x2248;50<span style="font-variant: small-caps;">km</span> journeys.</p>
-							<p style="margin: 0.25em 0;">In winter I try to make the most of my Mt. Ruapehu Life Pass by skiing or snowboarding.</p>
-						</li>
-						<li data-nav="Education">
-							<div class="img" style="height: 210px; background-image: url(feature/education.jpg);"></div>
-							<h2>Education</h2>
-							<h3><small>2010 &ndash; 2012</small> &nbsp; The University of Auckland</h3>
-							<p style="margin: 0.5em 0;">Bachelor of Science (Computer Science)</p>
-							<h3><small>2003 &ndash; 2007</small> &nbsp; Mt. Roskill Grammar School</h3>
-							<p style="margin: 0.5em 0;">
-								<small>2007</small> &nbsp; NCEA Level 3<br />
-								<small>2006</small> &nbsp; NCEA Level 2<br />
-								<small>2005</small> &nbsp; NCEA Level 1<br />
-							</p>
-							<h3>Awards</h3>
-							<p style="margin: 0.5em 0;"><small>2007</small> &nbsp; The de Beur Award</p>
-						</li>
-						<li data-nav="Employment">
-							<h2 style="margin-bottom: 0.70em;">Employment</h2>
-							<h3>iTICKET</h3>
-							<p style="margin: 0.60em 0; font-size: 0.85em;">
-								<small style="display: inline-block; min-width: 10em;">Nov 2012 &ndash; <span style="visibility: hidden;">MMM YYYY</span></small> &nbsp; Junior Developer<br />
-							</p>
-							<h3>Freelance</h3>
-							<p style="margin: 0.60em 0; font-size: 0.85em;">
-								<small style="display: inline-block; min-width: 10em;">Aug 2012</small> &nbsp; Chris Corson-Scott (Web development)<br />
-							</p>
-							<h3>EVENT Cinemas</h3>
-							<p style="margin: 0.60em 0; font-size: 0.85em;"><small style="display: inline-block; min-width: 10em;">Jan &ndash; Feb 2012</small> &nbsp; Cinema Services Attendant</p>
-							<h3>Safe Kids In Daily Supervision</h3>
-							<p style="margin: 0.60em 0; font-size: 0.85em;"><small style="display: inline-block; min-width: 10em;">Mar 2006 &ndash; Dec 2011</small> &nbsp; Programme Assitant</p>
-							<h3>Electoral Commission</h3>
-							<p style="margin: 0.60em 0; font-size: 0.85em;">
-								<small style="display: inline-block; min-width: 10em;">Nov &ndash; Dec 2011</small> &nbsp; Issuing Officer<br />
-								<small style="display: inline-block; min-width: 10em; visibility: hidden;">Nov &ndash; Dec 2011</small> &nbsp; Administrative Support<br />
-								<small style="display: inline-block; min-width: 10em;">Aug &ndash; Nov 2008</small> &nbsp; Issuing Officer<br />
-								<small style="display: inline-block; min-width: 10em;visibility: hidden;">Aug &ndash; Nov 2008</small> &nbsp; Administrative Support<br />
-							</p>
-							<h3>Statistics New Zealand</span></h3>
-							<p style="margin: 0.60em 0; font-size: 0.85em;">
-								<small style="display: inline-block; min-width: 10em;">Feb &ndash; Mar 2011</small> &nbsp; Enumerator (Census collector)
-							</p>
-						</li>
-					</ol>
-				</div></li>
-			</ul>
-		</div></div>
-	</div>
-	<span class="copyright"><!--
-		&copy; 2012 Jason Schwarzenberger
-	--></span>
-	<ul id="menu"></ul>
-	<ul id="sub-menu"></ul>
-</div>
+
+	<div id="viewport" class="container">
+		<div class="row">
+			<div class="col-lg-4"></div>
+			<div class="col-lg-8 menu-column">
+				<ul class="main-menu">
+					<li>
+						<a href="/Welcome">Welcome</a>
+					</li>
+					<li>
+						<a href="/Creations">Creations</a>
+					</li>
+					<li>
+						<a href="/Posts">Posts</a>
+					</li>
+					<li>
+						<a href="/About">About</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 left-column">
+				<div class="logo">
+					<a href="/">
+						<img class="" src="/img/Schwarzenberger.png" alt="Schwarzenberger" />
+					</a>
+				</div>
+
+				<h2 class="name">
+					<span>Jason Schwarzenberger</span>
+				</h2>
+
+				<h4 class="tagline">
+					<strong>Software developer</strong> and <strong>creator</strong> of <em>many things</em>
+				</h4>
+
+				<div class="btn-group social">
+					<a class="btn btn-lg" href="//profiles.google.com/iam5o1">
+						<i class="icon-gplus-1"></i>
+					</a>
+					<a class="btn btn-lg" href="//www.linkedin.com/in/jasonschwarzenberger">
+						<i class="icon-linkedin"></i>
+					</a>
+					<a class="btn btn-lg" href="//github.com/master5o1">
+						<i class="icon-github-circled"></i>
+					</a>
+					<a class="btn btn-lg" href="mailto:jason@master5o1.com">
+						<i class="icon-email"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-8 right-column">
+				aasdsad
+			</div>
+		</div>
+	</div>	
+
+<script type="text/javascript" src="./js/require.js"></script>
+<script type="text/javascript" src="./js/require-config.js"></script>
 <script type="text/javascript">
-    window._idl = {};
-    _idl.variant = "banner";
-    (function() {
-        var idl = document.createElement('script');
-        idl.type = 'text/javascript';
-        idl.async = true;
-        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
-        document.getElementsByTagName('body')[0].appendChild(idl);
-    })();
+	require(['Main'], function(Main, GooglePlus) {
+		console.log('Okay', Main, GooglePlus);
+	});
 </script>
 </body>
 </html>
