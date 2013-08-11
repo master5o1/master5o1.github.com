@@ -1,0 +1,54 @@
+!!!
+html(lang='en', prefix='og: http://ogp.me/ns#', ng-app='myApp')
+head
+		title Jason Schwarzenberger
+		meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+		meta(property='og:title', content='master5o1 | Jason Schwarzenberger')
+		meta(property='og:type', content='website')
+		meta(property='og:url', content='http://master5o1.com/')
+		meta(property='og:image', content='http://master5o1.com/Schwarzenberger.png')
+		link(rel='shortcut icon', href='favicon.png', type='image/png')
+		link(href='/css/bootstrap.min.css', type='text/css', rel='stylesheet')
+		link(href='/css/style.css', type='text/css', rel='stylesheet')
+	body
+		div#viewport.container
+			div.row
+				div.col-lg-4
+				div.col-lg-8.menu-column
+					ul.main-menu
+						li
+							a(href='/Welcome') Welcome
+						li
+							a(href='/Creations') Creations
+						li
+							a(href='/Posts') Posts
+						li
+							a(href='/About') About
+			div.row
+				div.col-lg-4.left-column
+					div.logo
+						a(href='/')
+							img(src='/img/Schwarzenberger.png', alt='Schwarzenberger')
+					h2.name
+						span Jason Schwarzenberger
+					h4.tagline
+						strong Software developer 
+						| and 
+						strong creator 
+						| of 
+						em many things
+					div.btn-group.social
+						a.btn.btn-lg(href='//profiles.google.com/iam5o1')
+							i.icon-gplus-1
+						a.btn.btn-lg(href='//www.linkedin.com/in/jasonschwarzenberger')
+							i.icon-linkedin
+						a.btn.btn-lg(href='//github.com/master5o1')
+							i.icon-github-circled
+						a.btn.btn-lg(href='mailto:jason@master5o1.com')
+							i.icon-email
+				div.col-lg-8.right-column
+					block body
+		script(type='text/javascript', src='./js/require.js')
+		script(type='text/javascript', src='./js/require-config.js')
+		script(type='text/javascript')
+			require(['Main'], function(Main, GooglePlus) { console.log('Okay', Main, GooglePlus); });

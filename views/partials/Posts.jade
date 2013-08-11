@@ -1,0 +1,33 @@
+section.posts
+	article(ng-repeat="(key, post) in Posts")
+		header
+			div.row
+				a.col-lg-1(href="{{ post.actor.url }}")
+					img(src="{{ post.actor.image.url }}")
+				div.col-lg-11(style="height: 50px; margin-top: 5px;")
+					div
+						a(href="{{ post.actor.url }}") {{ post.actor.displayName }}
+					div
+						| Shared Publicly &mdash; 
+						a(href="{{ post.url }}") {{ post.published | date }}
+		section
+			div.post-content(compile="post.object.content")
+			div.attachments
+				.attachment-item(ng-repeat="attachment in post.object.attachments")
+					div(ng-show="attachment.objectType == 'album'", style="text-align: left;")
+						| Album: 
+						a(href="{{ attachment.url }}", target="_blank")
+							strong {{ attachment.displayName || 'View Album' }}
+					a(ng-show="attachment.objectType == 'photo'", href="{{ attachment.url }}", target="_blank")
+						img(src="{{ attachment.image.url }}", style="max-width: 100%;")
+					a(ng-show="attachment.objectType == 'album'", href="{{ attachment.thumbnails[0].url }}", target="_blank", style="display: block;")
+						img(src="{{ attachment.thumbnails[0].image.url }}", style="max-width: 100%;")
+					div(ng-show="attachment.objectType == 'video'", style="text-align: left;")
+						| Video: 
+						a(href="{{ attachment.url }}", target="_blank")
+							strong {{ attachment.displayName || 'Watch Video' }}
+					div(ng-show="attachment.objectType == 'video' && !!attachment.embed")
+						iframe(src="{{ attachment.embed.url }}", style="border: none;", width="{{ attachment.image.width }}", height="{{ attachment.image.height }}")
+					div(ng-show="attachment.objectType == 'video' && !attachment.embed")
+						a(href="{{ attachment.url }}")
+							img(src="{{ attachment.image.url }}", style="max-width: 100%;")

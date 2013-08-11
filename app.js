@@ -4,34 +4,59 @@
  */
 
 var express = require('express'),
+  routes = require('./routes'),
+  api = require('./routes/api'),
   http = require('http'),
-  path = require('path'),
-  fs = require('fs');
+  path = require('path');
 
 var app = module.exports = express();
-var server = require('http').createServer(app);
+
+
 /**
  * Configuration
  */
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'html');
-app.use(express.static(path.join(__dirname, '')));
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+app.use(express.logger('dev'));
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(app.router);
 
-app.get('/:param?', function(req, res) {
-  fs.readFile(__dirname + '/index.html',
-  function (err, data) {
-    if (err) {
-      res.writeHead(500);
-      return res.end('Error loading index.html');
-    }
-
-    res.writeHead(200);
-    res.end(data);
-  });
+// development only
+app.configure('development', function(){
+  app.use(express.errorHandler());
+  app.locals.pretty = true;
 });
 
-server.listen(app.get('port'), function () {
+// production only
+app.configure('production', function(){
+  app.locals.pretty = true;
+});
+
+
+/**
+ * Routes
+ */
+
+// serve index and view partials
+app.get('/', routes.index);
+app.get('/partials/:name', routes.partials);
+
+// JSON API
+app.get('/api/name', api.name);
+
+// redirect all others to the index (HTML5 history)
+app.get('*', routes.index);
+
+
+/**
+ * Start Server
+ */
+
+http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
