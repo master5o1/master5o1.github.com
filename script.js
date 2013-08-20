@@ -40,34 +40,6 @@ var GooglePlus = function(data) {
 	});
 }
 
-var Twitter = function(data) {
-	$(document).ready(function() {
-		for (var i = 0; i < data.length; i+=4) {
-			var slide = '<li data-nav="' + (i/4) +'">';
-			for (var j = 0; j < 4; j++) {
-				if (i+j >= data.length) { break; }
-				var value = data[i+j];
-				var tweet = '<div class="text-content">';
-				var text = value.text;
-				var linkUrls = function (text) {
-					var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-					return text.replace(exp,"<a href='$1'>$1</a>"); 
-				};
-				text = linkUrls(text);
-				text = text.replace(/@([a-zA-Z0-9_]+)/g, '@<a href="https://twitter.com/$1">$1</a>');
-				text = text.replace(/#([a-zA-Z0-9_]+)/g,'#<a href="https://twitter.com/search?q=%23$1">$1</a>');
-				tweet += '<p>' + text + '</p>';
-				var retweet_count = (value.retweet_count == 0? "" : " &middot; " + value.retweet_count + " retweet" + (value.retweet_count == 1? "" : "s"));
-				tweet += '<div class="permalink-bar"><a href="https://twitter.com/master5o1/status/' + value.id_str + '">Permalink</a> | Posted <time class="timeago" datetime="' + value.created_at + '">' + (new Date(value.created_at)).toDateString() + '</time> via ' + value.source + retweet_count + '</div>';
-				tweet += '</div>';
-				slide += tweet;
-			}
-			slide += '</li>';
-			$('#twitter-slides').append(slide);
-		}
-	});
-}
-
 $(document).ready(function() {
 	var outside = $('#outside');
 	var centrebox = $('#centrebox');
@@ -82,16 +54,9 @@ $(document).ready(function() {
 	$(window).resize(function(){
 		var width = $(document).width();
 		var height = $(document).height();
-		outside.animate({
+		outside.css({
 			left: Math.round((width - outside.width()) / 2),
-			top: Math.round((height - outside.height()) / 2)
-		}, {
-			duration: 200,
-			step: function(){
-				if (Math.round((width - outside.width()) / 2) <= 0) outside.css('left', 0);
-				if (Math.round((height - outside.height()) / 2) <= 0) outside.css('top', 0);
-			},
-			queue: false
+			top: Math.round((height - outside.height()) / 2)			
 		});
 	});
 	
